@@ -1,0 +1,113 @@
+% LANGUAGE {{{
+    \setuplanguage[fr][
+        leftquote=\upperleftdoublesixquote,
+        rightquote=\upperrightdoublesixquote,
+    ]
+    \mainlanguage[fr]
+    \setcharacterspacing [frenchpunctuation]
+% }}}
+
+% LAYOUT {{{
+    \setuplanguage[fr]
+    \setupcolumns[n=2, balance=no]
+    \setuplayout[
+            topspace=15mm,
+            backspace=15mm,
+            height=255mm,
+            width=175mm,
+            header=0pt, 
+            columns=2,
+            grid=yes, % activates baseline grid
+            ] % page layout
+    \setuptolerance[{verystrict, verystrict}]
+
+    \setuppagenumbering[location={}]  % No page numbering
+% }}}
+
+% TYPOGRAPHY {{{
+    \usemodule[simplefonts]
+    \setmainfont[liberationsansbold]
+    \setupbodyfont[liberationsansbold, 9pt]
+    \definebodyfontenvironment[default][x=0.75 ,a=1, b=1.75, c=2, d=3.4] % defines higher sizes of fonts 
+    \setupwhitespace[14pt]  % inter-paragraph spacing
+    \setupinterlinespace[14pt]
+% }}}
+
+% JUSTIFICATION {{{
+    \setuptolerance[verystrict] % justification settings
+    \interlinepenalty=8000 % tries to avoid widows
+    \widowpenalty=8000 % tries to avoid widows
+    \clubpenalty=8000 % tries to avoid widows
+    \doublehyphendemerits=1000000 % tries to avoid consecutive hyphenations
+    \setupfonthandling [hz] [min=50,max=50,step=10]
+    \setupalign[hz, hanging]
+% }}}
+
+% TITLES {{{
+    \setupheader[text][align=flushleft]
+
+    \define[2]\MyChapter
+      {\framed[frame=off,width=broad,align=center]{\blank[6*big]#1\\#2\\⁂}}
+    \setuphead[chapter][
+        sectionnumber=yes,
+        align=center,
+        style=\tfa\cap,
+        after={\blank[6*big]},
+        command=\MyChapter, % FIXME... conflit avec les footnotes
+        ]
+
+    \def\MyChapterCommand#1#2% #1 is number, #2 is text
+      {\framed[frame=off,bottomframe=off,topframe=on,rulethickness=1.5pt]
+         {\vbox{#1#2}}} % \vbox is needed for \blank to work
+
+% OTHER {{{
+\setupitems[after={\blank[none]}]
+\setupitemgroup[itemize][after={\blank[none]},inbetween={\blank[none]}]
+\setupdelimitedtext[quotation][1][
+    before={\startnarrower[left]},
+    after={\stopnarrower},
+    ]
+\setupdelimitedtext[legend][1][
+    before={
+        \startnarrower[left, right]
+    },
+    after={
+        \stopnarrower
+    }
+]
+\setupexternalfigures[maxwidth=\textwidth - 70pt]
+\setupnarrower[middle=35pt, left=35pt, right=0pt, before={\blank[none]}]
+
+\definebar[underline][
+    order=background, % foreground to put line in front
+    rulethickness=0.12, 
+    offset=-0.8, 
+    continue=yes, 
+    color=black,
+    ]
+\definedescription[descr][
+    width=30pt,
+    hang=5,
+    indentnext=yes,
+    before={\startalignment[flushleft, nothyphenated, verytolerant]},
+    after={\stopalignment\blank[none]},
+    headstyle={\underline},
+    style={\underline},
+    ]
+\setuphead[subsubject][
+    command=\MyChapterCommand,
+    ]
+\setupheadtext[chapter=Chapter] % used by \headtext
+\setupfootnotes[
+    location=text,
+    ]
+% }}}
+
+\starttext
+%\useexternalfigure[dummy][nofile][width=\textwidth - 50pt]
+\startcolumns[n=2]
+\input input.tex
+\stopcolumns
+\stoptext
+
+% vim: set foldmethod=marker :

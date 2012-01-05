@@ -1,0 +1,125 @@
+\subject{CONTEXT}
+
+\subsubject{STRUCTURE DU DOSSIER DE TRAVAIL}
+
+\startitemize
+\item
+  styles-balsa.tex -\lettermore{} styles
+\item
+  programme2011--12.tex -\lettermore{} le programme 2011--2012,
+  englobant tous les articles (composants)
+\item
+  c00-edito.tex -\lettermore{} composant n°00 edito
+\item
+  c01-martine.tex -\lettermore{} composant n°01 martine
+\item
+  \ldots{}
+\item
+  festival\letterunderscore{}genese.tex -\lettermore{} à venir: le
+  programme du festival Genèse
+\item
+  c00-\ldots{}
+\item
+  c01-\ldots{}
+\item
+  \ldots{}
+\stopitemize
+
+\subject{EXPORTER LE GIT LOG}
+
+git log ---show-notes ---date=local ---reverse
+---pretty=format:\quotation{\%ad\%n\%n\%an\%n\%n\%s \%n} \lettermore{}
+gitlog.txt
+
+\subject{TRANSFORMER PSD EN TRACÉS}
+
+\startitemize
+\item
+  je me suis positionné sur chaque calque un par un
+\item
+  puis \lettermore{} menu layer \lettermore{} alpha to selection et mask
+  to selection
+\item
+  ensuite depuis l'onglet paths dialog
+\item
+  \startblockquote
+  j'appuie sur le bouton \quotation{selection to path}
+  \stopblockquote
+\item
+  et là dans le menu des paths
+\item
+  je demande export path
+\item
+  et ce qui est bien c'est que tu peux exporter tous les path d'un coup
+\item
+  direct svg
+\stopitemize
+
+\subsubject{EN UTILISANT LE PLUGIN GIMP}
+
+\startitemize
+\item
+  copier/coller le script layers2svg.py dans
+  \lettertilde{}/.gimpX.X/plug-ins/
+\item
+  lancer gimp
+\item
+  aller dans Filtres/Custom/LAYERS2SVG
+\item
+  les 2 premiers champs ne servent à rien
+\item
+  copier/coller le chemin de l'image originale
+\item
+  écrire le chemin du fichier SVG final
+\item
+  lancer le script!
+\item
+  ouvrir le fichier svg avec gedit (ou autre)
+\item
+  rechercher tout le brol entre 2 paths (détecter la fin d'un svg et le
+  début d'un autre) et remplacer par du vide: \quotation{}"
+
+   \quotation{}"
+\item
+  sauvegarder et ouvrir le svg avec inkscape!:
+\stopitemize
+
+
+% END OF balsamine
+
+
+A word only lives once. Each word of a text is erased except its first
+occurrence. The text becomes more and more empty. Only the
+\quotation{original} words are visible. The script here is applied to
+.srt subtitle file, but it can easily be adapted for any text.
+
+\subject{About the project}
+
+This piece has been written during one of the
+\useURL[1][http://www.activearchives.org/][][Active Archives]\from[1]
+workshop.
+
+\subject{Usage}
+
+\starttyping
+./disappearance.py in.srt > out.srt
+\stoptyping
+
+where
+
+in.srt : is the srt file to process, and out.srt : is the srt file to
+save the result in.
+
+You can then use the created subtitle file with your regular movie
+player. For instance, using mplayer:
+
+\starttyping
+mplayer movie.ogv -sub out.srt -subalign 1 -subpos 50 -subfont-text-scale \ 
+7 -utf8 -ass -font "NotCourierSans"
+\stoptyping
+
+
+
+% END OF disappearance
+
+
