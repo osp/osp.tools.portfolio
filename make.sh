@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # projects=('balsamine' 'disappearance')
 projects=('balsamine')
@@ -14,9 +14,9 @@ do
     # Get the README
     wget -O"${project}.mkd" $(printf ${url} ${project})
     # Just the introductory explanation:
-    python -c "f = open('${project}.mkd', 'r+'); b = f.read().split('- - -')[0]; f.write(b) "
+    python -c "f = open('${project}.mkd', 'r'); b = f.read().split('- - -')[0]; f.close(); f = open('${project}.mkd', 'w'); f.write(b) "
     # Add image list:
-    wget -O - >> $(printf ${index} ${project}) "${project}.mkd"
+    wget -O - $(printf ${index} ${project}) >> "${project}.mkd"
     # To tex:
     pandoc -f markdown -t context -o "${project}.tex" "${project}.mkd"
     echo -e "\n\n% END OF ${project}\n\n" >> "${project}.tex"
