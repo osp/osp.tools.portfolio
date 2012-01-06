@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# projects=('balsamine' 'disappearance')
-projects=('balsamine')
+projects=('balsamine' 'osp.work.gallait')
 url="http://git.constantvzw.org/?p=%s.git;a=blob_plain;f=README"
 index="http://git.constantvzw.org/?p=%s.git;a=blob_plain;f=iceberg/index.mkd"
 iceberg="http://git.constantvzw.org/?p=%s.git;a=tree;f=iceberg;"
@@ -12,8 +11,9 @@ cd tmp
 
 for project in "${projects[@]}"
 do
-    # Get the README
+    # Get the README or README.txt
     wget -O "${project}.mkd" $(printf ${url} ${project})
+    wget -O - $(printf ${url} ${project}).txt >> "${project}.mkd"
     # Just the introductory explanation:
     python -c "f = open('${project}.mkd', 'r'); b = f.read().split('- - -')[0]; f.close(); f = open('${project}.mkd', 'w'); f.write(b) "
     # Add image list:
