@@ -1,125 +1,127 @@
-\subject{CONTEXT}
+\subject{Visual identity for the Balsamine theatre.}
 
-\subsubject{STRUCTURE DU DOSSIER DE TRAVAIL}
+\subsubject{website, programmes, posters, fanzine and more}
 
-\startitemize
-\item
-  styles-balsa.tex -\lettermore{} styles
-\item
-  programme2011--12.tex -\lettermore{} le programme 2011--2012,
-  englobant tous les articles (composants)
-\item
-  c00-edito.tex -\lettermore{} composant n°00 edito
-\item
-  c01-martine.tex -\lettermore{} composant n°01 martine
-\item
-  \ldots{}
-\item
-  festival\letterunderscore{}genese.tex -\lettermore{} à venir: le
-  programme du festival Genèse
-\item
-  c00-\ldots{}
-\item
-  c01-\ldots{}
-\item
-  \ldots{}
-\stopitemize
+Changer de direction, c'est souvent changer sa ligne graphique. Changer
+de peau en soi, faire remarquer sa nouvelle présence, forger son image,
+se faire une réputation. Mais est-ce aussi simple que cela, est-ce que
+cela tient uniquement à cette façade de sa propre reconnaissance ? Ce
+qui est certain, c'est que, comme chaque relation que nous voulions
+entamer, l'idée du dialogue et du processus devait exister. Voilà
+pourquoi, il était important de rencontrer des personnalités
+philosophiquement engagées dans ces deux propositions. Instinctivement,
+nous sommes allés vers Speculoos. Ici nous interrompons le texte,
+extrait du blog http://osp.constantvzw.org/ : « En février Monica et
+Fabien du Théâtre de la Balsamine sont arrivés chez Speculoos, et deux
+heures après ils sont repartis, sans même vraiment le savoir, avec en
+plus OSP et . Pierre a senti d'une part qu'une hétérogéneïté de
+pratiques graphiques serait mieux à même de rendre compte de la
+tentative d'involution du projet théâtral naissant de la Balsamine, et
+d'autre part que, pour une fois, OSP pouvait risquer une réponse à une
+demande sans qu'une complicité préalable n'existe avec le mode
+expérimental qui lui est inhérent.
 
-\subject{EXPORTER LE GIT LOG}
-
-git log ---show-notes ---date=local ---reverse
----pretty=format:\quotation{\%ad\%n\%n\%an\%n\%n\%s \%n} \lettermore{}
-gitlog.txt
-
-\subject{TRANSFORMER PSD EN TRACÉS}
-
-\startitemize
-\item
-  je me suis positionné sur chaque calque un par un
-\item
-  puis \lettermore{} menu layer \lettermore{} alpha to selection et mask
-  to selection
-\item
-  ensuite depuis l'onglet paths dialog
-\item
-  \startblockquote
-  j'appuie sur le bouton \quotation{selection to path}
-  \stopblockquote
-\item
-  et là dans le menu des paths
-\item
-  je demande export path
-\item
-  et ce qui est bien c'est que tu peux exporter tous les path d'un coup
-\item
-  direct svg
-\stopitemize
-
-\subsubject{EN UTILISANT LE PLUGIN GIMP}
-
-\startitemize
-\item
-  copier/coller le script layers2svg.py dans
-  \lettertilde{}/.gimpX.X/plug-ins/
-\item
-  lancer gimp
-\item
-  aller dans Filtres/Custom/LAYERS2SVG
-\item
-  les 2 premiers champs ne servent à rien
-\item
-  copier/coller le chemin de l'image originale
-\item
-  écrire le chemin du fichier SVG final
-\item
-  lancer le script!
-\item
-  ouvrir le fichier svg avec gedit (ou autre)
-\item
-  rechercher tout le brol entre 2 paths (détecter la fin d'un svg et le
-  début d'un autre) et remplacer par du vide: \quotation{}"
-
-   \quotation{}"
-\item
-  sauvegarder et ouvrir le svg avec inkscape!:
-\stopitemize
+{\externalfigure[balsa_affiches-saison1.png]}
+{\externalfigure[balsa_affiches-saison2.png]}
+{\externalfigure[balsa_affiches-saison3.png]}
+{\externalfigure[Marc-de-Meyer_peintre.jpg]}
 
 
 % END OF balsamine
 
 
-A word only lives once. Each word of a text is erased except its first
-occurrence. The text becomes more and more empty. Only the
-\quotation{original} words are visible. The script here is applied to
-.srt subtitle file, but it can easily be adapted for any text.
+\subject{LABtoLAB}
 
-\subject{About the project}
+\subsubject{Media lab}
 
-This piece has been written during one of the
-\useURL[1][http://www.activearchives.org/][][Active Archives]\from[1]
-workshop.
+http://www.labtolab.org logo design and wiki theme OSP - Millle, 2011
 
-\subject{Usage}
+\placefigure[here,nonumber]{logo}{\externalfigure[labtolab_logo.png]}
 
-\starttyping
-./disappearance.py in.srt > out.srt
-\stoptyping
+Logo
 
-where
+\placefigure[here,nonumber]{wiki preview
+01}{\externalfigure[Screenshot-7.png]}
 
-in.srt : is the srt file to process, and out.srt : is the srt file to
-save the result in.
+wiki preview 01
 
-You can then use the created subtitle file with your regular movie
-player. For instance, using mplayer:
+\placefigure[here,nonumber]{wiki preview
+02}{\externalfigure[Screenshot-8.png]}
 
-\starttyping
-mplayer movie.ogv -sub out.srt -subalign 1 -subpos 50 -subfont-text-scale \ 
-7 -utf8 -ass -font "NotCourierSans"
-\stoptyping
+wiki preview 02
 
 
+% END OF osp.millle.LABtoLAB
 
-% END OF disappearance
+
+\subject{Constant Variable}
+
+\subsubject{Visual Identity for Free Libre Open Source Software Arts
+Lab}
+
+The 19th century town house at Rue Gallait 80 is now known as Constant
+Variable. For three years, it will house an arts lab for free, libre and
+open source software. Next to the Open Source Publishing studio, there
+is an open video workshop and an open hardware workshop. The top floor
+houses a residency.
+
+OSP has created a modular visual identity for Constant Variable. Using
+stickers with the VARIABLE logo and seperate keyword stickers
+representing Free, Libre, Open Source, Software and arts.
+
+The launch of Variable has coincided with the release of the Crickx
+font, used in the identity---based upon the letters from a Schaerbeek
+sign maker's shop.
+
+The signage has been created using actual Crickx stock from Publi Fluor,
+the stock upon which the digital font has been based.
+
+\placefigure[here,nonumber]{Invitation for the Opening
+(Cover)}{\externalfigure[variable_invitation_cover.png]}
+
+Invitation for the Opening (Cover)
+
+\placefigure[here,nonumber]{Variable
+sticker}{\externalfigure[variable_sticker.jpg]}
+
+Variable sticker
+
+\placefigure[here,nonumber]{Variable lettering
+(door)}{\externalfigure[variable_door.jpg]}
+
+Variable lettering (door)
+
+\placefigure[here,nonumber]{Website}{\externalfigure[site.png]}
+
+Announcement website
+
+
+% END OF osp.work.gallait
+
+
+\subject{Tot Later}
+
+\subsubject{Novel}
+
+The book was designed and typeset by OSP and printed by Holland
+Ridderkerk. - Antoine Begon, Ludi, Pierre Huyghebaert, Pierre Marchand
+2011 http://www.adashboard.org/?p=804
+
+\placefigure[here,nonumber]{overview of the interior text wrap
+01}{\externalfigure[tot-later2.jpg]}
+
+overview of the interior text wrap 01
+
+\placefigure[here,nonumber]{book cover}{\externalfigure[tot-later4.jpg]}
+
+book cover
+
+\placefigure[here,nonumber]{overview of the interior text wrap
+02}{\externalfigure[tot-later5.jpg]}
+
+overview of the interior text wrap 02
+
+
+% END OF osp.work.totlater
 
 
