@@ -27,6 +27,9 @@ do
     echo -e "\n\n% END OF ${project}\n\n" >> "${project}.tex"
 done
 
+python ../get_fonts.py
+wget -i ../foundry_image_list.txt
+
 cat *.tex > ../input.tex
 
 cd ..
