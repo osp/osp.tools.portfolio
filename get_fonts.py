@@ -31,7 +31,7 @@ f = open('foundry_image_list.txt','w')
 
 for article in d.entries:
     a = article.title
-    slug = slugify(article.id + '-' + a)
+    slug = slugify('zzz_' + article.id + '-' + a)
     with codecs.open(slug + '.mkd', 'w', 'utf-8') as g:
         g.write(a + '\n')
         g.write(len(a) * "=" + '\n\n')

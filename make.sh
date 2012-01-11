@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-projects=('balsamine' 'osp.work.gallait' 'osp.millle.LABtoLAB' 'osp.work.totlater')
+projects=('osp.work.panik' 'balsamine' 'osp.work.gallait' 'osp.work.pzi.catalogue2011' 'osp.work.acsr' 'osp.millle.LABtoLAB' 'osp.work.totlater')
 url="http://git.constantvzw.org/?p=%s.git;a=blob_plain;f=README"
 index="http://git.constantvzw.org/?p=%s.git;a=blob_plain;f=iceberg/index.mkd"
 iceberg="http://git.constantvzw.org/?p=%s.git;a=tree;f=iceberg;"

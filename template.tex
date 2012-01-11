@@ -1,3 +1,6 @@
+%\showframe 
+%\showgrid
+
 % LANGUAGE {{{
     \setuplanguage[fr][
         leftquote=\upperleftdoublesixquote,
@@ -9,12 +12,12 @@
 
 % LAYOUT {{{
     \setuplanguage[fr]
-    \setupcolumns[n=2, balance=no]
+    \setupcolumns[n=2, balance=yes]
     \setuplayout[
-            topspace=12mm,
-            backspace=12mm,
-            height=264mm,
-            width=183mm,
+            topspace=25mm,
+            backspace=40mm,
+            height=232mm,
+            width=154mm,
             header=0pt, 
             columns=2,
             grid=yes, % activates baseline grid
@@ -26,15 +29,15 @@
 
 % TYPOGRAPHY {{{
     \usemodule[simplefonts]
-    \setmainfont[universelseregular]
-    \setupbodyfont[universelseregular, 9pt]
-    \definebodyfontenvironment[default][x=0.75 ,a=1, b=1.75, c=2, d=3.4] % defines higher sizes of fonts 
+    \setmainfont[osphelveticaserifsounds]
+    \setupbodyfont[osphelveticaserifsounds, 9pt]
+    \definebodyfontenvironment[default][x=0.75 ,a=1, b=1.75, c=2, d=3] % defines higher sizes of fonts 
     \setupwhitespace[12pt]  % inter-paragraph spacing
     \setupinterlinespace[12pt]
 % }}}
 
 % JUSTIFICATION {{{
-%    \setuptolerance[verystrict] % justification settings
+    \setuptolerance[verytolerant] % justification settings
 %    \interlinepenalty=8000 % tries to avoid widows
 %    \widowpenalty=8000 % tries to avoid widows
 %    \clubpenalty=8000 % tries to avoid widows
@@ -46,19 +49,15 @@
 % TITLES {{{
     \setupheader[text][align=flushleft]
 
-    \define[2]\MyChapter
-      {\framed[frame=off,width=broad,align=center]{\blank[6*big]#1\\#2\\⁂}}
-    \setuphead[chapter][
-        sectionnumber=yes,
-        align=center,
-        style=\tfa\cap,
-        after={\blank[6*big]},
-        command=\MyChapter, % FIXME... conflit avec les footnotes
+    \setuphead[subject][
+        sectionnumber=no,
+	align={flushleft, outer, nothyphenated, verytolerant, stretch},
+        %align=center,
+        before=\page,
+        style=\tfd,
+        after={\blank[3*big]},
         ]
 
-    \def\MyChapterCommand#1#2% #1 is number, #2 is text
-      {\framed[frame=off,bottomframe=off,topframe=on,rulethickness=1.5pt]
-         {\vbox{#1#2}}} % \vbox is needed for \blank to work
 
 % OTHER {{{
 \setupitems[after={\blank[none]}]
@@ -89,7 +88,7 @@
     width=30pt,
     hang=5,
     indentnext=yes,
-    before={\startalignment[flushleft, nothyphenated, verytolerant]},
+    before={\startalignment[middle, nothyphenated, verytolerant]},
     after={\stopalignment\blank[none]},
     headstyle={\underline},
     style={\underline},
@@ -101,13 +100,41 @@
 \setupfootnotes[
     location=text,
     ]
+
+
+
+% TITLES
+% \definedescription[title][
+%      headstyle={\setupbodyfont[umepgothicvertical, 6pt]},
+%      style={\setupbodyfont[umemincho, 8pt]},
+%      align=flushleft,
+%      location=top,
+%      %hang=20,
+%      command=\hskip-3mm, 
+%      margin=3mm,
+%      %width=fit,
+%      before={\setupinterlinespace[10pt]},
+%      ]
+
+
+
 % }}}
 
 \starttext
+\startalignment[flushleft]
 %\useexternalfigure[dummy][nofile][width=\textwidth - 50pt]
 \startcolumns[n=2]
+\startalignment[flushleft]
+
 \input input.tex
+\stopalignment
 \stopcolumns
+\stopalignment
 \stoptext
 
 % vim: set foldmethod=marker :
+
+
+
+
+
